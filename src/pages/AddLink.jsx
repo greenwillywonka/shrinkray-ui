@@ -14,7 +14,7 @@ const AddLink = () => {
         e.preventDefault();
 
         const shortUrl = nanoid(6);
-        const apiUrl = "https://bzzt.fun/api/urls";
+        const apiUrl = `${import.meta.env.VITE_API_URL}/urls/add`; // Use environment variable for API URL
 
         const body = {
             "long_url": linkUrl,

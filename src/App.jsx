@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
 import Links from './pages/Links.jsx';
 import AddLink from './pages/AddLink.jsx';
+import NewUser from './pages/NewUser.jsx';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/links" element={<Links />} />
         <Route path="/addlink" element={<AddLink />} />
+        <Route path="/newuser" element={<NewUser />} />
       </Route>
     </Routes>
   );
