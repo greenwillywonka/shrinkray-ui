@@ -15,6 +15,7 @@ const AddLink = () => {
 
         const shortUrl = nanoid(6);
         const apiUrl = `${import.meta.env.VITE_API_URL}/urls/add`; // Use environment variable for API URL
+        const access_token = localStorage.getItem("access_token");
 
         const body = {
             "long_url": linkUrl,
@@ -29,8 +30,9 @@ const AddLink = () => {
                 body: JSON.stringify(body),
                 headers: {
                     "Content-Type": "application/json",
-                }
-            })
+                    Authorization: `Bearer ${access_token}`
+                },
+            });
             const data = await repsonse.json();
             console.log("Data: ", data);
             navigate("/links");
